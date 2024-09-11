@@ -1,0 +1,483 @@
+/* Ensure full height for html and body */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+/* Set background image */
+body {
+  background-image: url('/background_1.jpeg');
+  background-size: cover; /* Ensure the image covers the viewport */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fix background during scrolling */
+}
+
+.App {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center elements vertically */
+  align-items: center; /* Center elements horizontally */
+  height: 100vh; /* Take up full viewport height */
+  text-align: center; /* Center text inside the App container */
+}
+/* Add transparency to header and footer to make background visible */
+.App-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Align the title and buttons horizontally */
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px 40px;
+  color: white;
+  z-index: 1000; /* Ensure the header stays on top of other content */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width */
+}
+
+.header-buttons {
+  display: flex;
+  gap: 15px; /* Adds space between the buttons */
+}
+
+.header-buttons button {
+  padding: 10px 20px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #000000
+}
+
+.header-buttons button:hover {
+  background-color: #ddd;
+}
+
+main {
+
+  padding: 100px 20px 20px; /* Add padding to prevent overlap with fixed header */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-top: 100px;
+  border-radius: 10px;
+  margin-top: 60px; /* Add margin to push content below the fixed header */
+}
+
+/* Button container outside the box */
+.button-container {
+  margin-top: 100px; /* Adjust to position the button outside the box */
+}
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.App-footer {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+pre {
+  text-align: left;
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+.additional-section {
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.9); /* A slightly transparent background */
+  border-radius: 10px;
+  margin: 30px 0; /* Adds space around the section */
+  width: 80%; /* You can adjust the width to fit your design */
+}
+
+.additional-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.additional-section p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* Basic styles for the header */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(90deg, #ff8a00, #e52e71); /* Fancy gradient background */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure the header stays on top of other content */
+  box-sizing: border-box; /* Ensure padding is included in the element's total width */
+}
+
+.header-title {
+  font-family: 'Poppins', sans-serif; /* Fashionable font */
+  font-size: 28px;
+  color: white;
+  margin: 0;
+}
+
+/* Navigation styling */
+.nav {
+  display: flex;
+  gap: 30px; /* Increased spacing between links for a cleaner look */
+}
+
+/* Styling for the navigation links */
+.nav-link {
+  position: relative; /* Enables us to use ::before and ::after pseudo-elements */
+  font-family: 'Montserrat', sans-serif; /* Modern sans-serif font */
+  font-size: 18px;
+  text-transform: uppercase; /* Makes the links all caps for a modern feel */
+  color: white; /* White text for contrast */
+  text-decoration: none; /* No underlines */
+  letter-spacing: 2px; /* Adds a bit of space between letters */
+  transition: color 0.3s ease-in-out; /* Smooth transition when color changes */
+}
+
+/* Hover effect with underline animation */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white; /* Line underneath the text */
+  visibility: hidden; /* Initially hidden */
+  transform: scaleX(0); /* Start with the line scaled to 0 */
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+  visibility: visible;
+  transform: scaleX(1); /* Scale the line to 100% on hover */
+}
+
+/* Hover effect for text color change */
+.nav-link:hover {
+  color: #ffe082; /* Lighter color on hover */
+}
+
+/* Fancy gradient hover effect for each link */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ffe259, #ffa751);
+  transition: width 0.4s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Expands the gradient line on hover */
+}
+
+/* Footer container */
+.footer {
+  background: linear-gradient(90deg, #e52e71, #ff8a00); /* Gradient similar to header */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow above footer */
+  margin-top: 40px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Makes it responsive */
+  margin-bottom: 20px;
+}
+
+.footer-title {
+  font-family: 'Poppins', sans-serif; /* Same modern font as the header */
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-link {
+  font-family: 'Montserrat', sans-serif; /* Same font used for links in header */
+  font-size: 16px;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect for footer links */
+.footer-link:hover {
+  color: #ffe082; /* Lighter color on hover */
+}
+
+/* Underline effect */
+.footer-link::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-link:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+/* Footer bottom section */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Thin line separating the content from the bottom text */
+  padding-top: 10px;
+}
+
+.footer-text {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 0.7); /* Slightly transparent for a muted look */
+  margin: 0;
+}
+
+/* Main section container */
+.main-section {
+  background: linear-gradient(120deg, #f6f9fc, #e9eff1); /* Subtle gradient for background */
+  padding: 40px 20px;
+  color: #333; /* Dark text for good readability */
+  font-family: 'Montserrat', sans-serif; /* Consistent font */
+}
+
+/* Intro section styling */
+.intro {
+  background: linear-gradient(120deg, #e52e71, #ff8a00); /* Gradient background matching header and footer */
+  color: white;
+  padding: 40px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.intro-title {
+  font-family: 'Poppins', sans-serif; /* Fashionable font */
+  font-size: 32px;
+  margin: 0 0 10px;
+}
+
+.intro-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.cta-button {
+  background: #ff8a00; /* Button color matching the header/footer */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Hover effect for CTA button */
+.cta-button:hover {
+  background: #e52e71; /* Lighter color on hover */
+}
+
+/* Additional info section styling */
+.additional-info {
+  padding: 20px;
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.info-title {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.info-text {
+  font-size: 16px;
+  line-height: 1.6;
+}
+/* General page section styling */
+.page-section {
+  background: linear-gradient(120deg, #f6f9fc, #e9eff1); /* Subtle gradient for background */
+  padding: 40px 20px;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* About section styling */
+.about-section {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.section-text {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* General page section styling */
+.page-section {
+  background: linear-gradient(120deg, #f6f9fc, #e9eff1); /* Subtle gradient for background */
+  padding: 40px 20px;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Contact section styling */
+.contact-section {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  font-size: 16px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.cta-button {
+  background: #ff8a00; /* Button color matching the header/footer */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Hover effect for CTA button */
+.cta-button:hover {
+  background: #e52e71; /* Lighter color on hover */
+}
+
+
+
+.image-upload-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+
+input[type="file"] {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.upload-button {
+  background-color: #ff8a00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #e52e71;
+}
+
+.image-preview {
+  margin-top: 20px;
+}
+
+.preview-image {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
