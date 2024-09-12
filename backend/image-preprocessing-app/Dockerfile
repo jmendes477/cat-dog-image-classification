@@ -11,4 +11,4 @@ EXPOSE 5000
 #requirements
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD [ "python3", "./app.py" ]
+CMD [ "python3", "./image-processor-app.py" ]

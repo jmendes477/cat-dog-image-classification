@@ -1,9 +1,7 @@
 import base64
-from matplotlib import pyplot as plt
 from flask import Flask, request, jsonify
 import tensorflow as tf
 import numpy as np
-from PIL import Image
 import io
 
 # Load the Keras model

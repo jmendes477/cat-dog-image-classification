@@ -1,9 +1,7 @@
 import base64
-from matplotlib import pyplot as plt
 from flask import Flask, request, jsonify
 from flask_cors import CORS # type: ignore
 import requests
-import tensorflow as tf
 import numpy as np
 from PIL import Image
 import io
