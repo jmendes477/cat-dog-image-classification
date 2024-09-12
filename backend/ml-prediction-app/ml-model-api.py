@@ -16,6 +16,10 @@ def base64_to_numpy(base64_string):
     array_bytes = io.BytesIO(base64.b64decode(base64_string.encode('utf-8')))
     return np.load(array_bytes, allow_pickle=True)
 
+@app.route('/healthz')
+def health():
+    return jsonify({"status": "ok"}), 200
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
@@ -55,4 +59,4 @@ def predict():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)

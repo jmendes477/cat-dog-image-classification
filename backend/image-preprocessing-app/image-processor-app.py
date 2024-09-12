@@ -28,6 +28,10 @@ def ml_model(image):
 
     return classification.json()
 
+@app.route('/healthz')
+def health():
+    return jsonify({"status": "ok"}), 200
+
 @app.route('/process', methods=['POST'])
 def process():
     try:
@@ -88,4 +92,4 @@ def process():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5001)
+    app.run(host='0.0.0.0', port=5000)
