@@ -7,6 +7,10 @@ minikube start
 minikube addons enable ingress
 minikube addons enable ingress-dns
 ````
+Change to minikube docker registry
+````
+eval $(minikube -p minikube docker-env)
+````
 
 Build Images Command
 
